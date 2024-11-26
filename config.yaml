@@ -1,0 +1,70 @@
+search:
+  # TODO: cn en latin pinyin
+  herbs:
+    - "海藻"
+    - "夏枯草"
+    - "柴胡"
+    - "皂角刺"
+    - "连翘"
+    - "青皮"
+    - "川芎"
+    - "玄参"
+    - "当归"
+    - "土鳖虫"
+    - "丹参"
+    - "牡丹皮"
+    - "甘草"
+    - "浙贝母"
+    - "香附"
+    - "水蛭"
+    - "莪术"
+    - "昆布"
+    - "延胡索"
+    - "蒲黄"
+    - "三棱"
+    - "橘核"
+    - "生地黄"
+  diseases:
+    - "thyroid nodules"
+  exact_match: True
+
+save_dir:
+  autonp: "./data/autonp"
+  tcmsp: "./data/tcmsp"
+  herbac: "./data/herbac"
+  swiss: "./data/swiss"
+  pubchem: "./data/pubchem"
+  uniprot: "./data/uniprot"
+
+# 数据筛选条件
+filter:
+  tcmsp:
+    ob: 30 # 生物利用度（oral bioavailability, OB）：筛选OB大于30%的化合物，即口服后能被吸收进入体循环的化合物
+    dl: 0.18 # 药物类药性（drug-likeness, DL）：筛选DL指数大于0.18的化合物，即具有药物特征的化合物
+  herbac:
+    weight: 500 # 分子量（molecular weight）：筛选分子量小于等于500的化合物，以符合Lipinski's Rule of Five
+  pubchem:
+    xlogp: 5 # 脂溶性（log P）：筛选Log P值小于等于5的化合物，表示化合物的疏水性
+    hbonddonor: 5 # 氢键供体数（hydrogen bond donors）：筛选氢键供体数小于等于5的化合物
+    hbondacc: 10 # 氢键受体数（hydrogen bond acceptors）：筛选氢键受体数小于等于10的化合物
+  swiss:
+    prob: 0 # 预测活性概率（Probability*）：筛选预测活性概率大于0的化合物，即可能具有生物活性的化合物
+
+# # 全量数据下载配置
+# all_data:
+#   data_categories:
+#     - "herbs"
+#     - "ingredients"
+#     - "targets"
+#     - "diseases"
+#   save_directory: "./data/all_data"
+
+# # 请求设置
+url:
+  tcmsp: "https://old.tcmsp-e.com/tcmspsearch.php"
+#   pubchem:
+#     compound_id: "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{compound_id}/JSON/"
+
+# request_settings:
+#   timeout: 10 # 请求超时时间（秒）
+#   delay_between_requests: 1 # 每次请求之间的延迟（秒）

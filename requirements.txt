@@ -1,0 +1,8 @@
+beautifulsoup4
+lxml
+tqdm
+pandas
+pydantic
+PyYAML
+Requests
+# certifi

@@ -1,3 +1,23 @@
+.DS_Store
+
+debug.py
+test_herb.ipynb
+main.ipynb
+main.py
+
+utils/HerbLoader.py
+utils/pubchem.py
+
+data/autonp/
+data/herbac/
+data/tcmsp/
+data/tcmsp_all_data
+data/herb_ingredient/
+data/HERB本草组鉴全库
+
+matrials/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
